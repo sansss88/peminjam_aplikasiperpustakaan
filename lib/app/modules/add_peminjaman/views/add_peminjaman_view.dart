@@ -10,13 +10,11 @@ class AddPeminjamanView extends GetView<AddPeminjamanController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AddPeminjamanView'),
+        title: Text('Pinjam Buku ${Get.parameters['judul'].toString()}'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'AddPeminjamanView is working',
-          style: TextStyle(fontSize: 20),
+      body:  Center(
+        child: Column(
         ),
       ),
     );

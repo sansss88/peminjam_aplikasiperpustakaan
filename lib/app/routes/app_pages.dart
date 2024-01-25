@@ -38,7 +38,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.BUKU,
-      page: () => const BukuView(),
+      page: () => const BookView(),
       binding: BukuBinding(),
     ),
     GetPage(

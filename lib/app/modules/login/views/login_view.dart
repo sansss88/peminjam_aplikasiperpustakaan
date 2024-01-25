@@ -27,7 +27,7 @@ class LoginView extends GetView<LoginController> {
                       'Sign In',
                       style: TextStyle(
                           fontSize: 40.0,
-                          color: Color(0xFF080ba1),
+                          color: Color(0xff5a29a8),
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.w800,
                           letterSpacing: -1.0
@@ -172,7 +172,7 @@ class LoginView extends GetView<LoginController> {
                             ),
 
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xFF080ba1),
+                              backgroundColor: Color(0xff8931c7),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
                               ),
@@ -213,7 +213,7 @@ class LoginView extends GetView<LoginController> {
                               fontSize: 16.0,
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.w600,
-                              color: Color(0xFF080ba1),
+                              color: Color(0xff7136c4),
                             ),
                           ),
                         )

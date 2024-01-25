@@ -5,8 +5,8 @@ import '../controllers/buku_controller.dart';
 class BukuBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<BukuController>(
-      () => BukuController(),
+    Get.lazyPut<BookController>(
+      () => BookController(),
     );
   }
 }

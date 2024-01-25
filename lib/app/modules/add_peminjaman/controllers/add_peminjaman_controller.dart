@@ -42,7 +42,7 @@ class AddPeminjamanController extends GetxController {
       FocusScope.of(Get.context!).unfocus();
       formKey.currentState?.save();
       if (formKey.currentState!.validate()) {
-        final response = await ApiProvider.instance().post(Endpoint.register,
+        final response = await ApiProvider.instance().post(Endpoint.pinjam,
             data: {
               "user_id": StorageProvider.read(StorageKey.idUser),
               "book_id": Get.parameters['id'],
@@ -51,8 +51,8 @@ class AddPeminjamanController extends GetxController {
             });
 
         if (response.statusCode == 201) {
-          Get.snackbar("Information", "Register Succes", backgroundColor: Colors.green);
-          Get.offAllNamed(Routes.LOGIN);
+          Get.snackbar("Information", "peminjaman Succes", backgroundColor: Colors.green);
+          Get.offAllNamed(Routes.HOME);
         } else {
           Get.snackbar("Sorry", "Add Peminjaman Gagal", backgroundColor: Colors.red);
         }

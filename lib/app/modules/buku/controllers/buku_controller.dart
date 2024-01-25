@@ -6,7 +6,7 @@ import 'package:peminjam_perpustakaan_rplb_35/app/data/model/response_postbook.d
 import '../../../data/constant/endpoint.dart';
 import '../../../data/provider/api_provider.dart';
 
-class BookController extends GetxController with StateMixin<List<DataBook>>{
+class BookController extends GetxController with StateMixin<List<DataBook>> {
 
   @override
   void onInit() {
@@ -30,9 +30,10 @@ class BookController extends GetxController with StateMixin<List<DataBook>>{
       final response = await ApiProvider.instance().get(Endpoint.book,
       );
       if (response.statusCode == 200) {
-        final ResponsePetugasbook responsePostbook = ResponsePetugasbook.fromJson(
+        final ResponsePetugasbook responsePostbook = ResponsePetugasbook
+            .fromJson(
             response.data);
-        if (responsePostbook.data.isNull) {
+        if (responsePostbook.data!.isEmpty) {
           change(null, status: RxStatus.empty());
         } else {
           change(responsePostbook.data, status: RxStatus.success());
@@ -40,11 +41,11 @@ class BookController extends GetxController with StateMixin<List<DataBook>>{
       } else {
         change(null, status: RxStatus.error("Gagal menambil data"));
       }
-
     } on DioException catch (e) {
-      if (e.response != null){
-        if (e.response?.data!= null){
-          change(null, status: RxStatus.error("${e.response?.data['message']}"));
+      if (e.response != null) {
+        if (e.response?.data != null) {
+          change(
+              null, status: RxStatus.error("${e.response?.data['message']}"));
         }
       } else {
         change(null, status: RxStatus.error(e.message ?? ""));
